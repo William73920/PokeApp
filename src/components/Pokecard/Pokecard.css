@@ -1,0 +1,37 @@
+.pokecard {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.pokecard:hover {
+  transform: scale(1.05);
+}
+
+.pokeName {
+  font-weight: 400;
+  font-size: 30px;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+
+.pokeNumber {
+  font-weight: 400;
+}
+
+.pokeImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
