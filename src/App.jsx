@@ -62,7 +62,10 @@ function App() {
 
       <div className="pokecard-container">
         {loading ? (
-          <MagnifyingGlass />
+          <>
+            <MagnifyingGlass />
+            <p>Loading Pokecards...</p>
+          </>
         ) : (
           filteredPokemon.map((pokemon) => (
             <Pokecard key={pokemon.id} pokemon={pokemon} />
