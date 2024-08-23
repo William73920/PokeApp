@@ -4,6 +4,7 @@ import "./App.css";
 import Pokesearch from "./components/Pokesearch/Pokesearch";
 import Pokecard from "./components/Pokecard/Pokecard";
 import axios from "axios";
+import { MagnifyingGlass } from "react-loader-spinner";
 
 function App() {
   const [pokemonList, setPokemonList] = useState([]); // Holds the complete list of Pokémon
@@ -60,11 +61,13 @@ function App() {
       <Pokesearch searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
       <div className="pokecard-container">
-        {loading
-          ? "Loading..."
-          : filteredPokemon.map((pokemon) => (
-              <Pokecard key={pokemon.id} pokemon={pokemon} />
-            ))}
+        {loading ? (
+          <MagnifyingGlass />
+        ) : (
+          filteredPokemon.map((pokemon) => (
+            <Pokecard key={pokemon.id} pokemon={pokemon} />
+          ))
+        )}
       </div>
     </div>
   );
